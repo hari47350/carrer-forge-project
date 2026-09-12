@@ -1,0 +1,48 @@
+﻿spring:
+  application:
+    name: CareerForge
+
+  datasource:
+    url: jdbc:postgresql://YOUR_NEON_HOST/neondb?sslmode=require
+    username: YOUR_NEON_USERNAME
+    password: YOUR_NEON_PASSWORD
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+  flyway:
+    enabled: false
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+jwt:
+  secret: YOUR_JWT_SECRET_HERE
+  expiration: 86400000
+
+gemini:
+  api:
+    key: YOUR_GEMINI_API_KEY_HERE
+    url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+
+cors:
+  allowed-origins: http://localhost:5173
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.careerforge: DEBUG
+
+rapidapi:
+  key: YOUR_RAPIDAPI_KEY_HERE
